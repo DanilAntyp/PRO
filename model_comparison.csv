@@ -1,0 +1,7 @@
+Model,Strategy,Test Acc (%),QWK,Severe recall,Mild recall,Notes
+Baseline (EfficientNet-B4),argmax of single model,83.61,0.8858,29.4%,53.3%,Reference
+Model 1 (EffNet + improvements + TTA),argmax,82.79,0.8996,35.3%,60.0%,Improved minority recall
+Model 2 (ResNet50 + improvements + TTA),argmax,82.51,0.8856,35.3%,53.3%,Architectural diversity
+Ensemble (mean softmax),argmax of averaged probs,83.33,0.9008,35.3%,60.0%,Balanced accuracy/QWK
+Ensemble (OR rule),"max(class_eff, class_res)",83.33,0.9017,compute from confusion matrix above,compute from confusion matrix above,High-recall variant for screening
+Ensemble (threshold-optimized),expected grade + learned thresholds,79.23,0.9071,compute from confusion matrix above,compute from confusion matrix above,Kaggle-winner technique
